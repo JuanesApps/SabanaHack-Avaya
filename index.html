@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/c569b7fd47.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <title>Avaya Secure Campus</title>
+</head>
+
+<body>
+    <script>
+    </script>
+
+    <section id="leftBar">
+        <button onclick="fbActive()"></button>
+        <i class="fas fa-map-marked selected"></i>
+        <i class="fas fa-bullhorn"></i>
+        <i class="fas fa-desktop"></i>
+        <i class="far fa-calendar-alt"></i>
+        <i class="fas fa-bolt"></i>
+    </section>
+    <section id="profileBar">
+        <div class="pp">
+            <i class="fas fa-user"></i>
+        </div>
+        <p class="hora"></p>
+        <article></article>
+    </section>
+    <section id="dashboard">
+        <section class="sensors">
+            <article class="selected"><i class="fas fa-map-marked"></i></article>
+            <article><i class="fas fa-fire"></i></article>
+            <article><i class="fas fa-tint"></i></article>
+            <article><i class="fas fa-door-open"></i></article>
+            <article><i class="fas fa-smog"></i></article>
+            <article><i class="fab fa-confluence"></i></article>
+        </section>
+        <article class="map">
+            <img id="mapa" src="assets/map_map.jpg" alt="University Map">
+        </article>
+        <section class="data">
+            <article>
+                <i class="fas fa-user"></i>
+                <span>Estud. en campus</span>
+                <p id="cantEstudiantes">3561</p>
+            </article>
+            <article>
+                <i class="fas fa-user-shield"></i>
+                <span>Personal en campus</span>
+                <p id="cantPersonal">453</p>
+            </article>
+            <article>
+                <i class="fas fa-pencil-alt"></i>
+                <span>Salones ocupados</span>
+                <p id=salonesOcup>90</p>
+            </article>
+            <article>
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Alertas atendidas</span>
+                <p id="alertasAtend">2</p>
+
+            </article>
+            <article>
+                <div></div>
+            </article>
+        </section>
+    </section>
+    <section id="popUp" class="hidden">
+        <article class="window">
+            <article class="content">
+                <i class="fas fa-fire"></i>
+                <div>
+                    <h1>Posible Emergencia por Fuego</h1>
+                    <h2>Salon: <b>302L</b></h2>
+                    <h2>Temperatura: <b>75°</b></h2>
+                    <h3>Hora: <b>8:39 am</b></h3>
+                </div>
+            </article>
+            <article class="buttons">
+                <div class="omitir">Omitir</div>
+                <div class="crearEmergencia">Crear Emergencia</div>
+            </article>
+        </article>
+    </section>
+    <section id="popUpDos" class="hidden">
+            <article class="window">
+                <article class="content">
+                    <i class="fas fa-laptop"></i>
+                    <div>
+                        <h1>Posible Hurto de Activo Fijo</h1>
+                        <h2>Sector: <b>Cancha 1</b></h2>
+                        <h2>Modelo: <b>Dell XPS</b></h2>
+                        <h3>Hora: <b>3:39 pm</b></h3>
+                    </div>
+                </article>
+                <article class="buttons">
+                    <div class="omitir">Omitir</div>
+                    <div class="crearEmergencia">Crear Emergencia</div>
+                </article>
+            </article>
+    </section>
+    <button onclick="showNotification()" id="fb" class="active">
+        <img src="assets/facebook.JPG" alt="">
+    </button>
+    <script src="js/notify.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,667 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,200i,300,300i,400,400i,600,600i,700,700i,900&display=swap');
+
+$mainColor: #500505;
+$lightColor: #eb9e9e;
+$whiteColor: #f0f0f0;
+$shadowColor: #00000033;
+$dashColor: #e4e4e4;
+$barHeight: 80px;
+$barWidth: 80px;
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+body {
+    background: $whiteColor;
+    overflow: hidden;
+
+
+    #leftBar {
+        background: $whiteColor;
+        box-shadow: 0px 0px 9px -4px $shadowColor;
+        height: 100vh;
+        width: $barWidth;
+        position: fixed;
+        z-index: 9;
+
+        //Flex Attr
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+
+        i {
+            padding: 25px 0;
+            width: 100%;
+            font-size: 24px;
+            color: #ccc;
+            border-bottom: solid 1px #ddd;
+            //Flex Attr
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+
+            &:hover {
+                background: $dashColor;
+                color: #666;
+                cursor: pointer;
+            }
+        }
+
+        .selected {
+            border-top: solid 1px #ddd;
+            background: $dashColor;
+            color: #666;
+        }
+
+        button {
+            background: none;
+            border: none;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            z-index: 999;
+
+            //Flex Attr
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+        }
+    }
+
+    #profileBar {
+        background: $whiteColor;
+        box-shadow: 0px 0px 9px -4px $shadowColor;
+        padding: 20px;
+        height: $barHeight;
+        width: 100vw;
+        position: fixed;
+        z-index: 8;
+
+        //Flex Attr
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        align-content: center;
+        justify-content: space-between;
+
+        .hora {
+            font-size: 22px;
+            font-weight: 600;
+            color: #666;
+        }
+
+        .pp {
+            width: 45px;
+            height: 45px;
+            background: $dashColor;
+            border-radius: 1000px;
+            color: #666;
+
+            //Flex Attr
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+        }
+    }
+
+    #dashboard {
+        background: $dashColor;
+        height: calc(100vh - 80px);
+        width: calc(100vw - 80px);
+        padding: 20px;
+        position: fixed;
+        top: $barHeight;
+        left: $barWidth;
+
+        //Flex Attr
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+
+        article {
+            z-index: 9;
+            border-radius: 4px;
+            background: $whiteColor;
+            box-shadow: 0px 0px 12px -4px $shadowColor;
+        }
+
+        .sensors {
+            width: 5%;
+            height: 100%;
+            z-index: 10;
+
+            article {
+                height: 12%;
+                width: 100%;
+                margin-bottom: 5px;
+                border-radius: 5px 0 0 5px;
+                background: rgb(230, 230, 230);
+                box-shadow: -6px 0px 10px -7px $shadowColor;
+                cursor: pointer;
+                z-index: 7;
+
+                //Flex Attr
+                display: flex;
+                align-items: center;
+                align-content: center;
+                justify-content: center;
+
+                &:first-child {
+                    margin-top: 20px;
+                }
+
+                &:hover {
+                    background: $whiteColor;
+
+                    i {
+                        font-size: 20px;
+                        color: #666;
+                    }
+                }
+
+                &.selected {
+                    background: $whiteColor;
+
+                    i {
+                        font-size: 20px;
+                        color: #666;
+                    }
+                }
+
+                i {
+                    font-size: 20px;
+                    color: #aaa;
+                }
+            }
+        }
+
+        .map {
+            height: 100%;
+            width: 68%;
+            padding: 20px;
+
+            //Flex Attr
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+
+            img {
+                width: 100%;
+                border-radius: 4px;
+                box-shadow: 0px 0px 12px -4px $shadowColor;
+            }
+        }
+
+        .data {
+            height: 100%;
+            width: 25%;
+
+            //Flex Attr
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            align-content: flex-end;
+            justify-content: space-between;
+
+            article {
+                height: calc(12% - 10px);
+                width: calc(100% - 14px);
+                padding: 20px;
+
+                //Flex Attr
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                align-content: center;
+                justify-content: space-between;
+
+                &:last-child {
+                    height: calc(52% - 10px);
+                    padding: 20px;
+
+                    div {
+                        width: 100%;
+                        height: 100%;
+                        background: white;
+                        box-shadow: 0px 0px 9px -4px $shadowColor;
+                    }
+                }
+
+                i {
+                    font-size: 18px;
+                    color: #777;
+                }
+
+                span {
+                    font-size: 14px;
+                }
+
+                p {
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: #777;
+                }
+            }
+        }
+    }
+
+    #popUp {
+        
+        &.show {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: $shadowColor;
+            z-index: 12;
+            opacity: 1;
+
+            //Flex Attr
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+
+            .window {
+                background: $whiteColor;
+                border-radius: 4px;
+                padding: 30px 40px;
+                box-shadow: 0px 0px 9px -4px $shadowColor;
+
+                //Flex Attr
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                align-content: center;
+                justify-content: center;
+
+                article {
+                    //Flex Attr
+                    display: flex;
+                    align-items: center;
+                    align-content: center;
+                    justify-content: center;
+                }
+
+                .content {
+                    i {
+                        font-size: 80px;
+                        color: rgb(255, 115, 0);
+                        margin-right: 20px;
+                    }
+
+                    div {
+                        h1 {
+                            font-size: 21px;
+                        }
+
+                        h2 {
+                            font-size: 18px;
+                            font-weight: 400;
+                            text-indent: 10px;
+                        }
+
+                        h3 {
+                            font-size: 14px;
+                            font-weight: 300;
+                            text-indent: 10px;
+                        }
+                    }
+                }
+
+                .buttons {
+                    margin-top: 20px;
+                    width: 100%;
+
+                    //Flex Attr
+                    display: flex;
+                    align-items: center;
+                    align-content: center;
+                    justify-content: space-between;
+
+                    div {
+                        width: calc(50% - 10px);
+                        padding: 20px;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        background: white;
+                        box-shadow: 0px 0px 9px -4px $shadowColor;
+
+
+                        //Flex Attr
+                        display: flex;
+                        align-items: center;
+                        align-content: center;
+                        justify-content: center;
+
+                        &:hover {
+                            box-shadow: 0px 0px 24px -6px $shadowColor;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.hidden {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: $shadowColor;
+            z-index: -12;
+            opacity: 0;
+
+            //Flex Attr
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+
+            .window {
+                background: $whiteColor;
+                border-radius: 4px;
+                padding: 30px 40px;
+                box-shadow: 0px 0px 9px -4px $shadowColor;
+
+                //Flex Attr
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                align-content: center;
+                justify-content: center;
+
+                article {
+                    //Flex Attr
+                    display: flex;
+                    align-items: center;
+                    align-content: center;
+                    justify-content: center;
+                }
+
+                .content {
+                    i {
+                        font-size: 80px;
+                        color: rgb(255, 115, 0);
+                        margin-right: 20px;
+                    }
+
+                    div {
+                        h1 {
+                            font-size: 21px;
+                        }
+
+                        h2 {
+                            font-size: 18px;
+                            font-weight: 400;
+                            text-indent: 10px;
+                        }
+
+                        h3 {
+                            font-size: 14px;
+                            font-weight: 300;
+                            text-indent: 10px;
+                        }
+                    }
+                }
+
+                .buttons {
+                    margin-top: 20px;
+                    width: 100%;
+
+                    //Flex Attr
+                    display: flex;
+                    align-items: center;
+                    align-content: center;
+                    justify-content: space-between;
+
+                    div {
+                        width: calc(50% - 10px);
+                        padding: 20px;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        background: white;
+                        box-shadow: 0px 0px 9px -4px $shadowColor;
+
+
+                        //Flex Attr
+                        display: flex;
+                        align-items: center;
+                        align-content: center;
+                        justify-content: center;
+
+                        &:hover {
+                            box-shadow: 0px 0px 24px -6px $shadowColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #popUpDos {
+
+        &.show {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: $shadowColor;
+            z-index: 12;
+            opacity: 1;
+
+            //Flex Attr
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+
+            .window {
+                background: $whiteColor;
+                border-radius: 4px;
+                padding: 30px 40px;
+                box-shadow: 0px 0px 9px -4px $shadowColor;
+
+                //Flex Attr
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                align-content: center;
+                justify-content: center;
+
+                article {
+                    //Flex Attr
+                    display: flex;
+                    align-items: center;
+                    align-content: center;
+                    justify-content: center;
+                }
+
+                .content {
+                    i {
+                        font-size: 80px;
+                        color: red;
+                        margin-right: 20px;
+                    }
+
+                    div {
+                        h1 {
+                            font-size: 21px;
+                        }
+
+                        h2 {
+                            font-size: 18px;
+                            font-weight: 400;
+                            text-indent: 10px;
+                        }
+
+                        h3 {
+                            font-size: 14px;
+                            font-weight: 300;
+                            text-indent: 10px;
+                        }
+                    }
+                }
+
+                .buttons {
+                    margin-top: 20px;
+                    width: 100%;
+
+                    //Flex Attr
+                    display: flex;
+                    align-items: center;
+                    align-content: center;
+                    justify-content: space-between;
+
+                    div {
+                        width: calc(50% - 10px);
+                        padding: 20px;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        background: white;
+                        box-shadow: 0px 0px 9px -4px $shadowColor;
+
+
+                        //Flex Attr
+                        display: flex;
+                        align-items: center;
+                        align-content: center;
+                        justify-content: center;
+
+                        &:hover {
+                            box-shadow: 0px 0px 24px -6px $shadowColor;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.hidden {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: $shadowColor;
+            z-index: -12;
+            opacity: 0;
+
+            //Flex Attr
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+
+            .window {
+                background: $whiteColor;
+                border-radius: 4px;
+                padding: 30px 40px;
+                box-shadow: 0px 0px 9px -4px $shadowColor;
+
+                //Flex Attr
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                align-content: center;
+                justify-content: center;
+
+                article {
+                    //Flex Attr
+                    display: flex;
+                    align-items: center;
+                    align-content: center;
+                    justify-content: center;
+                }
+
+                .content {
+                    i {
+                        font-size: 80px;
+                        color: rgb(255, 115, 0);
+                        margin-right: 20px;
+                    }
+
+                    div {
+                        h1 {
+                            font-size: 21px;
+                        }
+
+                        h2 {
+                            font-size: 18px;
+                            font-weight: 400;
+                            text-indent: 10px;
+                        }
+
+                        h3 {
+                            font-size: 14px;
+                            font-weight: 300;
+                            text-indent: 10px;
+                        }
+                    }
+                }
+
+                .buttons {
+                    margin-top: 20px;
+                    width: 100%;
+
+                    //Flex Attr
+                    display: flex;
+                    align-items: center;
+                    align-content: center;
+                    justify-content: space-between;
+
+                    div {
+                        width: calc(50% - 10px);
+                        padding: 20px;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        background: white;
+                        box-shadow: 0px 0px 9px -4px $shadowColor;
+
+
+                        //Flex Attr
+                        display: flex;
+                        align-items: center;
+                        align-content: center;
+                        justify-content: center;
+
+                        &:hover {
+                            box-shadow: 0px 0px 24px -6px $shadowColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #fb {
+        &.active {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            border: none;
+            padding: 0;
+            z-index: 9999;
+        }
+    }
+}
